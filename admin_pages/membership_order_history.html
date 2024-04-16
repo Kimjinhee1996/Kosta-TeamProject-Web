@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .frame {
+            width: 650px;
+            height: 900px;
+            background-color: rgb(204, 246, 204);
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: rgb(243, 243, 243);
+        }
+
+        .item {
+            background-color: rgb(243, 243, 243);
+            height: 45px;
+            width: 200px;
+            text-align: center;
+            border-radius: 10cm;
+            margin-bottom: 30px;
+        }
+
+        .item p {
+            font-size: 30px;
+            margin: 0px;
+        }
+
+        .header_menu div {
+            background-color: rgb(243, 243, 243);
+            height: 45px;
+            width: 100px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header_menu div p {
+            font-size: 20px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div>
+            <div style="display: flex; margin-top: 40px;">
+                <div class="item" style="width: 300px;">
+                    <p>회원관리</p>
+                </div>
+                <div class="header_menu" style="display: flex; margin-left: 100px;">
+                    <div>
+                        <p>홈 화면</p>
+                    </div>
+                    <div style="margin-left: 10px;">
+                        <p>로그아웃</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="width: 550px;">
+                <div style="background-color: antiquewhite; display: flex;">
+                    <div>
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td>회원번호</td>
+                                <td>등급</td>
+                                <td>구매기록</td>
+                                <td>관리</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>01012345678</td>
+                                <td>단골</td>
+                                <td><button>기록보기</button></td>
+                                <td><button>관리</button></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>01012345678</td>
+                                <td>단골</td>
+                                <td><button>기록보기</button></td>
+                                <td><button>관리</button></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>01012345678</td>
+                                <td>단골</td>
+                                <td><button>기록보기</button></td>
+                                <td><button>관리</button></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>01012345678</td>
+                                <td>단골</td>
+                                <td><button>기록보기</button></td>
+                                <td><button>관리</button></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>01012345678</td>
+                                <td>단골</td>
+                                <td><button>기록보기</button></td>
+                                <td><button>관리</button></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>01012345678</td>
+                                <td>단골</td>
+                                <td><button>기록보기</button></td>
+                                <td><button>관리</button></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>01012345678</td>
+                                <td>단골</td>
+                                <td><button>기록보기</button></td>
+                                <td><button>관리</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+
+                        <fieldset>
+                            <legend>등급 필터링</legend>
+                            <div>
+                                <input type="checkbox">
+                                <label>일반회원</label>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <label>단골회원</label>
+                            </div>
+                            <div></div>
+                        </fieldset>
+
+                    </div>
+
+                </div>
+                <div style="height: 30px;"></div>
+                <div style="background-color: antiquewhite;">
+                    <table style="width: 600px;">
+                        <tr>
+                            <td></td>
+                            <td>날짜</td>
+                            <td>구매내역</td>
+                            <td>결제기록</td>
+                            <td>포인트적립</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2024.02.02</td>
+                            <td>
+                                <ol>
+                                    <li>햄버거</li>
+                                    <li>사이다</li>
+                                </ol>
+                            </td>
+                            <td>15,000원</td>
+                            <td>-3000원</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2024.02.03</td>
+                            <td>
+                                <ol>
+                                    <li>햄버거</li>
+                                    <li>사이다</li>
+                                </ol>
+                            </td>
+                            <td>15,000원</td>
+                            <td>-3000원</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2024.02.04</td>
+                            <td>
+                                <ol>
+                                    <li>햄버거</li>
+                                    <li>사이다</li>
+                                </ol>
+                            </td>
+                            <td>15,000원</td>
+                            <td>-3000원</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2024.02.05</td>
+                            <td>
+                                <ol>
+                                    <li>햄버거</li>
+                                    <li>사이다</li>
+                                </ol>
+                            </td>
+                            <td>15,000원</td>
+                            <td>-3000원</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

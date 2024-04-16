@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .frame {
+            width: 650px;
+            height: 900px;
+            background-color: rgb(204, 246, 204);
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        .header_menu div {
+            background-color: rgb(243, 243, 243);
+            height: 45px;
+            width: 100px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header_menu div p {
+            font-size: 20px;
+            margin: 0px;
+        }
+
+
+        .item {
+            background-color: rgb(243, 243, 243);
+            height: 45px;
+            width: 200px;
+            text-align: center;
+            border-radius: 10cm;
+            margin-bottom: 30px;
+        }
+
+        .item p {
+            font-size: 30px;
+            margin: 0px;
+        }
+
+        /* button {
+            width: 110px;
+            border: none;
+            font-size: 20px;
+            margin-right: 20px;
+        } */
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: rgb(243, 243, 243);
+        }
+
+        td {
+            text-align: center;
+            font-size: 20px;
+            width: 100px;
+            height: 50px;
+        }
+
+        input {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+
+        <div>
+            <div style="display: flex; margin-top: 40px;">
+                <div class="item" style="width: 300px;">
+                    <p>재고 관리>제품수량</p>
+                </div>
+                <div class="header_menu" style="display: flex; margin-left: 100px;">
+                    <div>
+                        <p>홈 화면</p>
+                    </div>
+                    <div style="margin-left: 10px;">
+                        <p>로그아웃</p>
+                    </div>
+
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <table>
+                    <tr>
+                        <td>품목</td>
+                        <td>수량</td>
+                        <td>입력</td>
+                        <td>변경</td>
+                    </tr>
+                    <tr>
+                        <td>치즈버거</td>
+                        <td>200</td>
+                        <td><input type="number"></td>
+                        <td><button>-</button><button>+</button></td>
+                    </tr>
+                    <tr>
+                        <td>불고기버거</td>
+                        <td>100</td>
+                        <td><input type="number"></td>
+                        <td><button>-</button><button>+</button></td>
+                    </tr>
+                    <tr>
+                        <td>지옥버거</td>
+                        <td>0</td>
+                        <td><input type="number"></td>
+                        <td><button>-</button><button>+</button></td>
+                    </tr>
+                    <tr>
+                        <td>아이스크림</td>
+                        <td>30</td>
+                        <td><input type="number"></td>
+                        <td><button>-</button><button>+</button></td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 50px;">
+                <button>뒤로가기</button>
+                <button>저장하기</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

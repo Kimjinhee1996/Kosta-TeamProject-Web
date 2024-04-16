@@ -1,0 +1,14 @@
+.frame {
+    width: 800px;
+    height: 900px;
+    background-color: antiquewhite;
+}
+
+.item_img {
+    width: 160px;
+}
+
+.btn_category {
+    width: 150px;
+    height: 50px;
+}
