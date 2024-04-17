@@ -1,14 +1,185 @@
+/* 부트스트랩 요소의 속성을 바꾸려면 !important를 추가해서 강제로 바꿔야 함. */
+/* 더미 속성으로 사용 */
+/* content: "";*/
+
+/* 모든 스크롤 가능한 요소에 대해 스크롤바 스타일 설정 */
+::-webkit-scrollbar {
+    width: 12px;
+    /* 스크롤바의 폭 설정 */
+}
+
+/* 스크롤바의 트랙 (배경 부분) */
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* 트랙의 배경을 투명하게 설정 */
+}
+
+/* 스크롤바의 썸 (드래그 가능한 부분) */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* 썸의 배경색 설정 */
+    border-radius: 6px;
+    /* 썸의 모서리를 둥글게 설정 */
+}
+
+/* 스크롤바 썸에 호버했을 때 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* 호버 시 썸의 배경색 변경 */
+}
+
+
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    /* 임시 색상.*/
+    background-color: #a7ffab !important;
+}
+
 .frame {
-    width: 800px;
-    height: 900px;
-    /* background-color: antiquewhite; */
+    /* 임시 색상 */
+    background-color: #fe6ff5;
+
+    /* 전체 뷰포트 너비 */
+    width: calc(100vh * (512 / 683));
+    /* 너비에 비례하여 높이 설정 */
+    height: 100vh;
+    max-width: 1024px;
+    max-height: 1366px;
+}
+
+.footer_main {
+    background-color: #F1EDED;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.background_main {
+    height: 90%;
+    background: linear-gradient(to right, #E8F460 50%, #19C216 50%);
+}
+
+.btn_gray {
+    background-color: #C0BDBD !important;
+}
+
+.btn_round {
+    border-radius: 2cm !important;
+    color: white !important;
+    font-weight: bold !important;
+    /* height: 2.5vh !important; */
+    font-size: 2.4vh !important;
 }
 
 .item_img {
-    width: 160px;
+    width: 23vh;
 }
 
 .btn_category {
-    width: 150px;
-    height: 50px;
+    width: 15vh;
+    height: 6vh;
+    font-size: 2.5vh !important;
+}
+
+.header {
+    background-color: rgb(255, 234, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    padding-left: 5vh;
+    padding-right: 5vh;
+}
+
+.header_title {
+    font-size: 4vh;
+    margin-top: 1.5vh;
+}
+
+.cart {
+    width: 6vh;
+    height: 6vh;
+    display: block;
+}
+
+.cart_container {
+    /* 상대적 위치 지정 */
+    position: relative;
+    /* 이미지 크기에 맞춰 컨테이너 크기 조정 */
+    width: fit-content;
+}
+
+.overlay-text {
+    /* 절대 위치 지정 */
+    position: absolute;
+    /* 상위 요소 기준으로 50% 위치에 배치 */
+    top: 70%;
+    /* 상위 요소 기준으로 50% 위치에 배치 */
+    left: 30%;
+    /* 정확히 중앙에 오도록 조정 */
+    transform: translate(-50%, -50%);
+    /* 텍스트 색상 설정 */
+    color: white;
+    /* 텍스트 크기 설정 */
+    font-size: 3vh;
+    /* 텍스트 중앙 정렬 */
+    text-align: center;
+}
+
+.btns_categories {
+    width: 100%;
+    background-color: #2716c200;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.scroll_container {
+    background-color: #19c21600;
+    height: 80%;
+    margin-top: 2vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    overflow: scroll;
+}
+
+.item_container {
+    display: flex;
+
+}
+
+.item_img_container {
+    margin-right: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item_title {
+    font-size: 4vh;
+}
+
+.item_sub {
+    font-size: 2vh;
+}
+
+.item_price {
+    font-size: 2vh;
+}
+
+.home_container img {
+    width: 5vh;
+    height: 5vh;
+}
+
+.header_right_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

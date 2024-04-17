@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -17,55 +17,61 @@
 <body>
     <div class="frame">
 
-        <div class="header">
-            <div>
-                <p class="header_title">메뉴 선택</p>
-            </div>
-            <div class="header_right_items">
-                <div class="home_container">
-                    <img class="home" src="./img//home.png" alt="home">
-                </div>
-                <div style="width: 2vh;"></div>
-                <div class="cart_container">
-                    <img class="cart" src="./img/cart.png" alt="cart">
-                    <div class="overlay-text">0</div>
-                </div>
-            </div>
-
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+            <div style="width: 100px;"></div>
+            <p class="h1" style="margin-top: 20px; margin-bottom: 20px;">메뉴 선택</p>
+            <img class="cart" src="./img/Group 3.png" alt="cart" style="width: 50px; height: 50px;">
         </div>
 
-        <div class="btns_categories"">
-            <button type=" button" class="btn_category btn btn-warning">
-            햄버거
+        <div style=" display: flex; justify-content: center;">
+            <button type="button" class="btn_category btn btn-warning">
+                <p class="h4">
+                    햄버거
+                </p>
             </button>
-            <button type="button" class="btn_category btn btn-light">
-                음료
+            <div style="width: 20px;"></div>
+            <button type="button" class="btn_category btn btn-light"
+                style="display: flex; align-items: center; justify-content: center;">
+                <p class="h4">
+                    음료
+                </p>
             </button>
+            <div style="width: 20px;"></div>
             <button type="button" class="btn_category btn btn-light">
-                사이드 메뉴
+                <p class="h4">
+                    사이드메뉴
+                </p>
             </button>
+            <div style="width: 20px;"></div>
             <button type="button" class="btn_category btn btn-light">
-                디저트
+                <p class="h4">
+                    디저트
+                </p>
             </button>
         </div>
 
-        <div class="scroll_container">
-            <hr>
-            <div class="item_container">
-                <div class="item_img_container">
+        <div style="margin-left: 50px; 
+        margin-top: 50px; 
+        padding-left: 20px; 
+        overflow: scroll;
+        height: 700px;">
+            <hr style="width: 670px;">
+
+            <div style="display: flex; margin-top: 10px; margin-bottom: 10px;">
+                <div>
                     <img class="item_img" src="./img/치즈버거 2 1.png" alt="치즈버거">
                 </div>
-                <!-- <div style="width: 30px;"> -->
+                <div style="width: 30px;">
 
-                <!-- </div> -->
+                </div>
                 <div>
-                    <p class="item_title">치즈버거</p>
-                    <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                    <p class="h3">치즈버거</p>
+                    <p class="h6">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
                         가득 클래식 버거</p>
-                    <p class="item_price">5000원</p>
+                    <p class="h4">5000원</p>
                 </div>
             </div>
-            <hr>
+            <hr style="width: 670px;">
             <div style="display: flex; margin-top: 10px; margin-bottom: 10px;">
                 <div>
                     <img class="item_img" src="./img/불고기 버거 1.png" alt="불고기버거">
@@ -79,21 +85,7 @@
                     <p class="h4">6000원</p>
                 </div>
             </div>
-            <hr>
-            <div style="display: flex; margin-top: 10px; margin-bottom: 10px;">
-                <div>
-                    <img class="item_img" src="./img/새우버거 1.png" alt="새우버거">
-                </div>
-                <div style="width: 30px;">
-
-                </div>
-                <div style="width: 500px;">
-                    <p class="h3">(HOT)새우버거</p>
-                    <p class="h6">바삭한 새우 패티와 부드러운 크림 소스가 어우러진 럭셔리 버거! 새우 풍미와 크림 소스와 환상적 만남</p>
-                    <p class="h4">5000원</p>
-                </div>
-            </div>
-            <hr>
+            <hr style="width: 670px;">
 
             <div style="display: flex; margin-top: 10px; margin-bottom: 10px;">
                 <div>
@@ -108,7 +100,7 @@
                     <p class="h4">5000원</p>
                 </div>
             </div>
-            <hr>
+            <hr style="width: 670px;">
 
             <div style="display: flex; margin-top: 10px; margin-bottom: 10px;">
                 <div>
@@ -123,7 +115,7 @@
                     <p class="h4">5000원</p>
                 </div>
             </div>
-            <hr>
+            <hr style="width: 670px;">
 
             <div style="display: flex; margin-top: 10px; margin-bottom: 10px;">
                 <div>
@@ -138,13 +130,43 @@
                     <p class="h4">5000원</p>
                 </div>
             </div>
-            <hr>
+            <hr style="width: 670px;">
+
+            <div style="display: flex; margin-top: 10px; margin-bottom: 10px;">
+                <div>
+                    <img class="item_img" src="./img/새우버거 1.png" alt="새우버거">
+                </div>
+                <div style="width: 30px;">
+
+                </div>
+                <div style="width: 500px;">
+                    <p class="h3">(HOT)새우버거</p>
+                    <p class="h6">바삭한 새우 패티와 부드러운 크림 소스가 어우러진 럭셔리 버거! 새우 풍미와 크림 소스와 환상적 만남</p>
+                    <p class="h4">5000원</p>
+                </div>
+            </div>
+
 
         </div>
+
+
+
+
+
     </div>
 
-    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".cart").click(function (event) {
+                // Prevent default click behavior (e.g., link following)
+                event.preventDefault();
 
+                // Redirect to main.html using window.location
+                window.location.href = "order_list.html";
+            });
+        });
+
+    </script>
 </body>
 
 </html>
