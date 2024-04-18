@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="header">
+            <div>
+                <p class="header_title">주문 내역</p>
+            </div>
+            <div class="header_right_items">
+                <div class="home_container">
+                    <img class="home" src="./img//home.png" alt="home">
+                </div>
+                <div style="width: 2vh;"></div>
+                <div class="cart_container">
+                    <img class="cart" src="./img/cart.png" alt="cart">
+                    <div class="overlay-text">0</div>
+                </div>
+            </div>
+
+        </div>
+        <div style="padding-left: 5vh; padding-right: 5vh; background-color: rgb(222, 222, 222); height: 80%;">
+            <div class="delete_options">
+                <div class="delete_all_group">
+                    <div style="padding-bottom: 0.7vh;">
+                        <input class="form-check-input my_checkbox" type="checkbox" id="">
+                    </div>
+                    <div>
+                        <div>전체 선택</div>
+
+                    </div>
+
+                </div>
+                <div style="margin-top: 1vh;">
+                    <button type="button" class="btn btn-secondary btn_gray btn_round">선택 삭제</button>
+                </div>
+
+            </div>
+            <div id="미들 프레임" style="padding: 3vh; height: fit-content;">
+                <div id="items" style="overflow: scroll; height: 60vh;">
+                    <div id="아이템" style="background-color: white; border-radius: 1.2vh;">
+                        <div style="background-color: rgba(243, 128, 128, 0); width: 100%; display: flex;">
+                            <div style="background-color: #19c21600;  width: 5vh; height: 10vh;">
+                                <div style="padding-bottom: 0.7vh; display: flex; justify-content: center;">
+                                    <input class="form-check-input my_checkbox" type="checkbox" id="">
+                                </div>
+                            </div>
+                            <div style="background-color: rgba(202, 202, 202, 0); width: 100%; height: 5vh;">
+                                <div id="title" style="height: 5vh;">
+                                    <div style="font-size: 2.5vh;">치즈 버거</div>
+                                </div>
+                                <div id="수량" style="display: flex; justify-content: space-between;">
+                                    <div>수량: 1개</div>
+                                    <div style="margin-right: 3vh;">5000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div style="display: flex; justify-content: end;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <img class="cal" src="./img/minus.png" alt="minus">
+
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                                    <p class="cal">1</p>
+                                </div>
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <img class="cal" src="./img/add.png" alt="add">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div style="height: 3vh;"></div>
+
+                    <div id="아이템" style="background-color: white; border-radius: 1.2vh;">
+                        <div style="background-color: rgba(243, 128, 128, 0); width: 100%; display: flex;">
+                            <div style="background-color: #19c21600;  width: 5vh; height: 10vh;">
+                                <div style="padding-bottom: 0.7vh; display: flex; justify-content: center;">
+                                    <input class="form-check-input my_checkbox" type="checkbox" id="">
+                                </div>
+                            </div>
+                            <div style="background-color: rgba(202, 202, 202, 0); width: 100%; height: 5vh;">
+                                <div id="title" style="height: 5vh;">
+                                    <div style="font-size: 2.5vh;">치즈 버거</div>
+                                </div>
+                                <div id="수량" style="display: flex; justify-content: space-between;">
+                                    <div>수량: 1개</div>
+                                    <div style="margin-right: 3vh;">5000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div style="display: flex; justify-content: end;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <img class="cal" src="./img/minus.png" alt="minus">
+
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                                    <p class="cal">1</p>
+                                </div>
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <img class="cal" src="./img/add.png" alt="add">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div style="height: 3vh;"></div>
+
+                    <div id="아이템" style="background-color: white; border-radius: 1.2vh;">
+                        <div style="background-color: rgba(243, 128, 128, 0); width: 100%; display: flex;">
+                            <div style="background-color: #19c21600;  width: 5vh; height: 10vh;">
+                                <div style="padding-bottom: 0.7vh; display: flex; justify-content: center;">
+                                    <input class="form-check-input my_checkbox" type="checkbox" id="">
+                                </div>
+                            </div>
+                            <div style="background-color: rgba(202, 202, 202, 0); width: 100%; height: 5vh;">
+                                <div id="title" style="height: 5vh;">
+                                    <div style="font-size: 2.5vh;">치즈 버거</div>
+                                </div>
+                                <div id="수량" style="display: flex; justify-content: space-between;">
+                                    <div>수량: 1개</div>
+                                    <div style="margin-right: 3vh;">5000원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div style="display: flex; justify-content: end;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <img class="cal" src="./img/minus.png" alt="minus">
+
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                                    <p class="cal">1</p>
+                                </div>
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <img class="cal" src="./img/add.png" alt="add">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="background-color: white; border-radius: 1.2vh; margin-top: 3vh;">
+                    <div
+                        style="display: flex; justify-content: space-between; font-size: 3vh; padding-left: 1.5vh; padding-right: 1.5vh;">
+                        <div style="font-weight: bold;">
+                            총 주문 금액
+                        </div>
+                        <div style="font-weight: bold;">
+                            ￦13,000
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="display: flex; height: fit-content; align-items: end;">
+            <div
+                style="background-color: #19C216; display: flex; width: 50%; align-items: center; justify-content: center; height: 10vh;">
+                <p style="color: white; font-weight: bold; font-size: 3vh;">메뉴 추가하기</p>
+            </div>
+            <div class="order"
+                style="background-color: #40DA3D; display: flex; width: 50%; align-items: center; justify-content: center; height: 10vh;">
+                <p style="color: white; font-weight: bold; font-size: 3vh;">주문하기</p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Trigger the action when a specific element is clicked (e.g., a button)
+            $(".go_back").click(function () {
+                // Navigate to the previous page using window.history.back()
+                window.history.back();
+            });
+
+
+            $(".order").click(function (event) {
+                // Prevent default click behavior (e.g., link following)
+                event.preventDefault();
+
+                // Redirect to main.html using window.location
+                window.location.href = "order_finish.html";
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

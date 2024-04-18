@@ -37,32 +37,33 @@ html {
 
 body {
     /* 임시 색상.*/
-    background-color: #a7ffab !important;
+    background-color: #ffffff !important;
 }
 
 .frame {
     /* 임시 색상 */
-    background-color: #fe6ff5;
+    background-color: #ffffff;
 
     /* 전체 뷰포트 너비 */
     width: calc(100vh * (512 / 683));
-    /* 너비에 비례하여 높이 설정 */
     height: 100vh;
     max-width: 1024px;
     max-height: 1366px;
+
+    border: 0.2vh solid black;
 }
 
 .footer_main {
     background-color: #F1EDED;
     width: 100%;
-    height: 10%;
+    height: 5%;
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
 .background_main {
-    height: 90%;
+    height: 95%;
     background: linear-gradient(to right, #E8F460 50%, #19C216 50%);
 }
 
@@ -74,8 +75,8 @@ body {
     border-radius: 2cm !important;
     color: white !important;
     font-weight: bold !important;
-    /* height: 2.5vh !important; */
-    font-size: 2.4vh !important;
+    /* height: 4vh !important; */
+    font-size: 2.1vh !important;
 }
 
 .item_img {
@@ -83,13 +84,13 @@ body {
 }
 
 .btn_category {
-    width: 15vh;
+    width: 16vh;
     height: 6vh;
-    font-size: 2.5vh !important;
+    font-size: 2.4vh !important;
 }
 
 .header {
-    background-color: rgb(255, 234, 0);
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -182,4 +183,47 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.my_checkbox {
+    width: 3vh !important;
+    height: 3vh !important;
+    border-radius: 2cm !important;
+}
+
+.delete_options {
+    background-color: rgba(255, 192, 203, 0);
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete_all_group {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.delete_all_group input {
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+.delete_all_group * {
+    font-size: 2.5vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.to_admin {
+    width: 4vh;
+    height: 4vh;
+    opacity: 30%;
+}
+
+.cal {
+    width: 4vh;
+    height: 4vh;
+    font-size: 3.3vh;
 }

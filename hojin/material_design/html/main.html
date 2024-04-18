@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+          "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+          }
+        }
+      </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+
+</head>
+
+<body>
+    <div class="frame">
+        <div class="background_main">
+            <div>
+                <div>
+                    <div style="width: 50%; background-color: #00000000; text-align: center; padding-top: 5%;">
+                        <img src="./img/신선하게.png" alt="신선하게" width="90%">
+                    </div>
+                </div>
+                <div style="width: 100%; background-color: #00000000;">
+                    <div style="display: flex;">
+                        <div style="width: 50%;"></div>
+                        <div style="width: 50%; text-align: center;">
+                            <img src="./img/다채롭게.png" alt="다채롭게" width="90%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: #00000000; text-align: center;">
+                <img src="./img/burger.png" alt="햄버거" width="70%" height="70%">
+            </div>
+            <div style="text-align: center;">
+                <img src="./img/치즈 가득! 트러플 치즈 버거!!.png" alt="" width="90%">
+            </div>
+            <div style="height: 20px;"></div>
+            <div style="text-align: center;">
+                <img src="./img/단골 고객으로 상승시 무려 5프로 적립!!.png" alt="" width="90%">
+            </div>
+
+        </div>
+        <div class="footer_main">
+            <!-- <button type="button" class="btn btn_gray btn_round to_admin">관리자 로그인</button> -->
+            <img src="./img/settings_FILL1_wght400_GRAD0_opsz48.png" alt="setting" class="to_admin">
+            <div style="width: 3vh; height: 3vh; background-color: rgba(0, 0, 0, 0);"></div>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
