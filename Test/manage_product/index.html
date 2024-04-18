@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="v161_4473"><span class="v161_4480">상품 관리> 제품 수량</span>
+        <div class="v161_4481"></div>
+        <div class="v161_4505"></div>
+        <div class="v161_4513"></div><span class="v161_4514" style="cursor: pointer;">로그아웃</span>
+        <div class="v161_4533" style="cursor: pointer;"></div>
+        <div class="v183_5617">
+            <div class="v161_4537"></div>
+            <div class="name"></div>
+            <div class="name"></div>
+            <div class="name"></div>
+            <div class="v183_5616">
+                <div class="v161_4486"></div><span class="v161_4545">품목</span><span class="v161_4546">수량</span><span
+                    class="v161_4547">입력</span><span class="v161_4548">변경</span>
+            </div>
+            <div class="v183_5613">
+                <div class="v161_4495"></div>
+                <div class="v161_4501 " style="cursor: pointer;"></div>
+                <div class="v161_4502" style="cursor: pointer;"></div>
+                <span class="v161_4549">치즈 버거</span><span class="v161_4550">200</span>
+                <span class="v161_4552">
+                    <input class="my_input" type="text" name="amount" ; value="0"
+                        style="font-size: 38px; font-weight: 500; height: 50px; border: none; width: 80px;"></span>
+            </div>
+            <div class="v183_5614">
+                <div class="v161_4535"></div>
+                <div class="v161_4492" style="cursor: pointer;"></div>
+                <div class="v161_4493" style="cursor: pointer;"> </div><span class="v161_4553">아이스크림</span><span
+                    class="v161_4554">30</span><span class="v161_4555"> <input class="my_input1" type="text"
+                        name="amount" ; value="0"
+                        style="font-size: 38px; font-weight: 500; height: 50px; border: none; width: 80px;"></span>
+            </div>
+            <div class="v183_5615">
+                <div class="v161_4536"></div>
+                <div class="v161_4543" style="cursor: pointer;"></div>
+                <div class="v161_4544" style="cursor: pointer;"></div><span class="v161_4556">브라우니</span><span
+                    class="v161_4557">50</span><span class="v161_4558"> <input class="my_input2" type="text"
+                        name="amount" ; value="0"
+                        style="font-size: 38px; font-weight: 500; height: 50px; border: none; width: 80px;"></span>
+            </div>
+        </div>
+        <div class="v161_4508"></div>
+        <div class="v161_4509"></div><span class="v161_4510" style="cursor: pointer;"> 뒤로 가기</span><span
+            class="v161_4511" style="cursor: pointer;">저장 하기</span>
+    </div>
+    <script>
+        $(".v161_4533").click(function () {
+            alert('메인화면으로 이동합니다.');
+        });
+        $(".v161_4514").click(function () {
+            alert('관리자 창에서 로그아웃 합니다.');
+        });
+        $(".v161_4511").click(function () {
+            alert('변경 사항이 저장되었습니다');
+        });
+        $(".v161_4510").click(function () {
+            alert('뒷 페이지로 이동합니다.');
+        });
+        $(".v161_4502").click(function () {
+            $(".my_input").val(function (i, oldval) {
+                return ++oldval;
+            })
+        });
+        $(".v161_4493").click(function () {
+            $(".my_input1").val(function (i, oldval) {
+                return ++oldval;
+            })
+        });
+        $(".v161_4544").click(function () {
+            $(".my_input2").val(function (i, oldval) {
+                return ++oldval;
+            })
+        });
+        $(".v161_4501").click(function () {
+            $(".my_input").val(function (i, oldval) {
+                return --oldval;
+            })
+        });
+        $(".v161_4492").click(function () {
+            $(".my_input1").val(function (i, oldval) {
+                return --oldval;
+            })
+        });
+        $(".v161_4543").click(function () {
+            $(".my_input2").val(function (i, oldval) {
+                return --oldval;
+            })
+        });
+
+    </script>
+</body>
+
+
+</html>
