@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/point.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+
+</head>
+
+<body>
+    <div class="frame">
+        <div class="header" style="background-color: white;">
+
+        </div>
+        <div class="middle">
+            <div class="ask_membership">
+                <div class=" yes">
+                    <div style="font-size: 2.5vh; height: 50%;"><span
+                            style="color: rgb(81, 192, 81); font-weight: bold;">회원</span>이신 경우
+                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br>
+                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;=> <span
+                            style="color: rgb(81, 192, 81); font-weight: bold;">포인트 적립</span>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div class=" no">
+                    <div style="font-size: 2.5vh; height: 50%;"><span
+                            style="color: rgb(81, 192, 81); font-weight: bold;">비회원</span>이신 경우
+                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <br>
+                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                        => <span style="color: rgb(81, 192, 81); font-weight: bold;">회원가입</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="bottom">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

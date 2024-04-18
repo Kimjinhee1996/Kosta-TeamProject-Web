@@ -1,0 +1,49 @@
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    /* 임시 색상.*/
+    background-color: #ffffff !important;
+}
+
+.frame {
+    /* 임시 색상 */
+    background-color: #ffffff;
+
+    /* 전체 뷰포트 너비 */
+    width: calc(100vh * (512 / 683));
+    height: 100vh;
+    max-width: 1024px;
+    max-height: 1366px;
+
+    border: 0.2vh solid black;
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    padding-left: 5vh;
+    padding-right: 5vh;
+}
+
+.middle {
+    background-color: #C0BDBD;
+    /* height: fit-content;  */
+    /* height fit stretch */
+    height: 70vh;
+    padding: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom {
+    background-color: rgba(250, 182, 182, 0.571);
+    height: 10%;
+}
