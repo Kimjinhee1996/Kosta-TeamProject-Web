@@ -1,0 +1,23 @@
+.ask_membership {
+    height: 50vh;
+    width: 50vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.ask_membership>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ask_membership>.yes {
+    height: 50%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.ask_membership>.no {
+    height: 50%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
