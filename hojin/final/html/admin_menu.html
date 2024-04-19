@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- import jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        /* 스크롤바 전체 컨테이너 */
+        ::-webkit-scrollbar {
+            width: 12px;
+            /* 스크롤바의 너비 설정 */
+            background-color: transparent;
+            /* 배경색을 투명하게 설정 */
+        }
+
+        /* 스크롤바의 실제 이동하는 부분인 핸들 */
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            /* 핸들의 색상과 투명도 설정 */
+            border-radius: 6px;
+            /* 핸들의 모서리 둥글게 */
+            border: 3px solid transparent;
+            /* 투명한 경계선으로 내부 배경 표시 */
+            background-clip: padding-box;
+            /* 내부 경계선 내부에서 배경을 클리핑 */
+        }
+
+        .overlay-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .inner_html {
+            /* get overlay-img width in realtime */
+            width: 52vh;
+            height: 70vh;
+            background-color: rgba(255, 255, 255, 0.992);
+        }
+
+        .header {
+            height: 10%;
+            /* 부모 태그의 높이에 대해 10% 계산 */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_title {
+            font-size: 3vh;
+            margin-left: 5%;
+        }
+
+        .header_title>p {
+            margin-top: 0;
+            margin-bottom: 1%;
+        }
+
+        .header_icons {
+            margin-right: 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_icons>* {
+            font-size: 4vh;
+            /* width: 4vh; */
+            height: 4vh;
+        }
+
+        .header_icons>div {
+            display: flex;
+            align-items: center;
+        }
+
+        .logout {
+            font-size: 2vh;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            margin-left: 1vh;
+        }
+
+        .middle {
+            height: 81%;
+            width: 100%;
+            background-color: #F1EDED;
+            display: flex;
+            justify-content: center;
+            overflow: scroll;
+        }
+
+        .accordion_container {
+            width: 80%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+
+        .accordion {
+            font-size: 2vh;
+            font-weight: bold;
+            background-color: #ffffff;
+            color: #444;
+            cursor: pointer;
+            padding: 3vh;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .active,
+        .accordion:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Style the accordion panel. Note: hidden by default */
+        .panel {
+            padding: 0 3vh 0 6vh;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .panel>p {
+            font-size: 1.7vh;
+        }
+
+        .footer {
+            height: calc(75vh * 0.1);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #F1EDED;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/kiosk.png" class="overlay-img" alt="kiosk">
+    </div>
+    <div class="inner_html">
+
+        <div class="header">
+            <div class="header_title">
+                <p>관리자 메뉴</p>
+            </div>
+            <div class="header_icons">
+                <img src="../img/home.png" alt="home">
+                <div>
+                    <button class="logout">로그아웃</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="accordion_container">
+                <button class="accordion">상품 관리</button>
+                <div class="panel">
+                    <p>제품 수량</p>
+                    <p>제품 가격</p>
+                    <p>제품 목록</p>
+                    <p>재고 관리</p>
+                </div>
+                <hr style="margin: 0; border: 0.1vh solid #F1EDED;">
+                <button class="accordion">주문 관리</button>
+                <div class="panel">
+                    <p>주문 현황</p>
+                    <p>주문 기록 확인</p>
+                    <p>주문 상태 변경</p>
+                </div>
+                <hr style="margin: 0; border: 0.1vh solid #F1EDED;">
+
+                <button class="accordion">결제 취소</button>
+                <div class="panel">
+                    <p>결제 취소</p>
+                </div>
+                <hr style="margin: 0; border: 0.1vh solid #F1EDED;">
+
+                <button class="accordion">회원 관리</button>
+                <div class="panel">
+                    <p>회원 매출 기록</p>
+                    <p>회원 등급 관리</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+
+        </div>
+
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
