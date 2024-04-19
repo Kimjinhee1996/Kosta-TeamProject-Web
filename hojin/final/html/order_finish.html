@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- import jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .overlay-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .inner_html {
+            /* get overlay-img width in realtime */
+            width: 52vh;
+            height: 70vh;
+            background-color: rgba(255, 255, 255, 0.992);
+        }
+
+
+        .header {
+            height: 10%;
+            /* 부모 태그의 높이에 대해 10% 계산 */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_title {
+            font-size: 3vh;
+            margin-left: 5%;
+        }
+
+        .header_title>p {
+            margin-top: 0;
+            margin-bottom: 1%;
+        }
+
+        .header_icons {
+            margin-right: 5%;
+        }
+
+        .header_icons>* {
+            font-size: 4vh;
+        }
+
+        .middle {
+            height: 72%;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            padding: 3vh;
+        }
+
+        .footer {
+            height: calc(75vh * 0.1);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #40DA3D;
+        }
+
+        .footer_button {
+            width: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer_button>p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 3vh;
+            font-weight: 500;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/kiosk.png" class="overlay-img" alt="kiosk">
+    </div>
+    <div class="inner_html">
+
+        <div class="header">
+            <div class="header_title">
+                <p>결제 완료</p>
+            </div>
+            <div class="header_icons">
+
+
+            </div>
+        </div>
+
+        <div class="middle">
+
+            <div>
+                <div style="height: 40vh; position: relative">
+                    <div style="color: #20A91D; font-size: 2.5vh;">
+                        결제가 완료 되었습니다.
+                    </div>
+                    <div style="padding-top: 2vh;">
+                        <span style="font-size: 2vh; font-family: Inter; font-weight: 400; word-wrap: break-word">
+                            치즈버거
+                            <br />
+                        </span>
+                        <span
+                            style="color: black; font-size: 2vh; font-family: Inter; font-weight: 400; word-wrap: break-word">
+                            수량 : 1개
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            5,000원<br />
+                        </span>
+
+                        <span
+                            style="color: black; font-size: 2vh; font-family: Inter; font-weight: 400; word-wrap: break-word">
+                            <br />
+                            총
+                            주문 금액 : &nbsp;&nbsp; 5,000원
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 90%; display: flex; justify-content: center;">
+                <div>
+                    <div><span style="color: black; font-size: 2vh;">고객님의
+                            주문
+                            번호는</span><span style="color: #20A91D; font-size: 2vh;">
+                            45번</span><span style="color: black; font-size: 2vh;">
+                            입니다.</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer home">
+
+            <div class="footer_button ">
+                <p>홈으로 돌아가기</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        $('.home').click(function () {
+            window.location.href = 'main.html';
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- import jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .overlay-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .inner_html {
+            /* get overlay-img width in realtime */
+            width: 52vh;
+            height: 70vh;
+            background-color: rgba(255, 255, 255, 0.992);
+        }
+
+        .header {
+            height: 10%;
+            /* 부모 태그의 높이에 대해 10% 계산 */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_title {
+            font-size: 3vh;
+            margin-left: 5%;
+        }
+
+        .header_title>p {
+            margin-top: 0;
+            margin-bottom: 1%;
+        }
+
+        .header_icons {
+            margin-right: 5%;
+        }
+
+        .header_icons>* {
+            font-size: 4vh;
+        }
+
+        .middle {
+            height: 81%;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer {
+            height: calc(75vh * 0.1);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #40DA3D;
+        }
+
+        .footer_button {
+            border: 1px solid black;
+            width: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer_button>p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 3vh;
+            font-weight: 500;
+            color: white;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 62%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            /* background-color: #fefefe; */
+            /* margin: auto; */
+            /* 15% from the top and centered */
+            padding: 3vh;
+            /* border: 1px solid #888; */
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/kiosk.png" class="overlay-img" alt="kiosk">
+    </div>
+    <div class="inner_html">
+
+        <div class="header">
+            <div class="header_title">
+                <p>포인트 적립</p>
+            </div>
+            <div class="header_icons">
+
+
+            </div>
+        </div>
+
+        <div class="middle">
+            <div style="width: 80%; height: 70%;">
+                <div
+                    style="height: 50%; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3vh;">
+                    <p><span style="color: green;">회원</span>이신 경우 <br>
+                        => 포인트 적립</p>
+                </div>
+                <hr>
+                <div
+                    style="height: 50%; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3vh;">
+                    <p><span style="color: green;">비회원</span>이신 경우 <br>
+                        => 회원 가입 후 포인트 적립</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer_button save">
+                <p>포인트 적립</p>
+            </div>
+            <div class="footer_button signup">
+                <p>회원가입</p>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="close">
+                </div>
+                <img src="../img/numpad.png" alt="numpad" style="width: 45vh;">
+            </div>
+            <div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        $('.save').click(function () {
+            modal.style.display = "block";
+        });
+    </script>
+
+</body>
+
+</html>
