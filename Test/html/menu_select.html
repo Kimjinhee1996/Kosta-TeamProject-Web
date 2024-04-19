@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- import jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        /* 스크롤바 전체 컨테이너 */
+        ::-webkit-scrollbar {
+            width: 12px;
+            /* 스크롤바의 너비 설정 */
+            background-color: transparent;
+            /* 배경색을 투명하게 설정 */
+        }
+
+        /* 스크롤바의 실제 이동하는 부분인 핸들 */
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            /* 핸들의 색상과 투명도 설정 */
+            border-radius: 6px;
+            /* 핸들의 모서리 둥글게 */
+            border: 3px solid transparent;
+            /* 투명한 경계선으로 내부 배경 표시 */
+            background-clip: padding-box;
+            /* 내부 경계선 내부에서 배경을 클리핑 */
+        }
+
+        .overlay-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .inner_html {
+            /* get overlay-img width in realtime */
+            width: 52vh;
+            height: 70vh;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .header {
+            height: 10%;
+            /* 부모 태그의 높이에 대해 10% 계산 */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_title {
+            font-size: 3vh;
+            margin-left: 5%;
+        }
+
+        .header_title>p {
+            margin-top: 0;
+            margin-bottom: 1%;
+        }
+
+        .header_icons {
+            margin-right: 5%;
+        }
+
+        .header_icons>* {
+            font-size: 4vh;
+        }
+
+        .middle {
+            height: 81%;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .category_btns {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-bottom: 3%;
+            margin-left: 5vh;
+            margin-right: 5vh;
+        }
+
+        .category_btns>button {
+            display: flex;
+            align-items: center;
+            border: transparent;
+            height: 3.5vh;
+            box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        .category_btns>button>p {
+            font-size: 2vh;
+        }
+
+        .scroll_container {
+            overflow: scroll;
+            height: 50vh;
+            padding-left: 2vh;
+            padding-right: 2vh;
+            padding-top: 2vh;
+            justify-content: space-around;
+        }
+
+        .item_container {
+            display: flex;
+            background-color: aliceblue;
+            border-radius: 0.2cm;
+            border: 1px solid black;
+            box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.75);
+            margin: 1vh;
+        }
+
+        .item_img_container {
+            margin-right: 1.5vh;
+            padding-left: 1.5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item_img {
+            width: 10vh;
+        }
+
+        .item_txts>p {
+            margin: 0;
+        }
+
+        .item_title {
+            font-size: 2vh;
+        }
+
+        .item_sub {
+            font-size: 1.8vh;
+        }
+
+        .item_price {
+            font-size: 2vh;
+        }
+
+        .footer {
+            height: calc(75vh * 0.1);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #40DA3D;
+        }
+
+        .footer_button {
+            border: 1px solid black;
+            width: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer_button>p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 3vh;
+            font-weight: 500;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/kiosk.png" class="overlay-img" alt="kiosk">
+    </div>
+    <div class="inner_html">
+
+        <div class="header">
+            <div class="header_title">
+                <p>MENU</p>
+            </div>
+            <div class="header_icons">
+                <!-- <span class="material-symbols-outlined">
+                    home
+                </span> -->
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="category_btns">
+                <button>
+                    <p>햄버거</p>
+                </button>
+                <button>
+                    <p>음료</p>
+                </button>
+                <button>
+                    <p>사이드 메뉴</p>
+                </button>
+                <button>
+                    <p>디저트</p>
+                </button>
+            </div>
+
+            <div class="menu_list">
+                <div class="scroll_container">
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_img_container">
+                            <img class="item_img" src="../img/치즈버거 2 1.png" alt="치즈버거">
+                        </div>
+                        <div class="item_txts">
+                            <p class="item_title">치즈버거</p>
+                            <p class="item_sub">고소한 치즈와 육즙 가득한 패티가 어우러진 풍미
+                                가득 클래식 버거</p>
+                            <p class="item_price">5000원</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="footer_button cancel">
+                <p>취소</p>
+            </div>
+            <div class="footer_button order_list">
+                <p>주문하기</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    </div>
+
+    <script>
+        $('.order_list').click(function () {
+            window.location.href = 'order_list.html';
+        });
+
+        $('.cancel').click(function () {
+            window.location.href = 'main.html';
+        });
+    </script>
+
+</body>
+
+</html>

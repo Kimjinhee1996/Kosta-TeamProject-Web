@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- import jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .overlay-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .inner_html {
+            /* get overlay-img width in realtime */
+            width: 52vh;
+            height: 70vh;
+            background-color: rgba(255, 255, 255, 0.992);
+        }
+
+        .header {
+            height: 10%;
+            /* 부모 태그의 높이에 대해 10% 계산 */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_title {
+            font-size: 3vh;
+            margin-left: 5%;
+        }
+
+        .header_title>p {
+            margin-top: 0;
+            margin-bottom: 1%;
+        }
+
+        .header_icons {
+            margin-right: 5%;
+        }
+
+        .header_icons>* {
+            font-size: 4vh;
+        }
+
+        .middle {
+            height: 81%;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer {
+            height: calc(75vh * 0.1);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #40DA3D;
+        }
+
+        .footer_button {
+            border: 1px solid black;
+            width: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer_button>p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 3vh;
+            font-weight: 500;
+            color: white;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 52vh;
+            /* Full width */
+            height: 75vh;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            /* background-color: #fefefe; */
+            /* margin: auto; */
+            /* 15% from the top and centered */
+            /* padding: 3vh; */
+            /* border: 1px solid #888; */
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+            /* display: flex; */
+            /* justify-content: center; */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 4vh;
+        }
+
+        /* The Close Button */
+        .close_div {
+            height: 3vh;
+            width: 100%;
+            background-color: yellow;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-weight: bold;
+        }
+
+        .close>img {
+            height: 3vh;
+            width: 3vh;
+        }
+
+        .modal_body {
+            height: 50vh;
+            width: 100%;
+            background-color: white;
+        }
+
+        .input_area {
+            height: 20vh;
+        }
+
+        .input_top {
+            height: 20%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .top_msg {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top_msg>p {
+            font-size: 2vh;
+            margin: auto;
+        }
+
+        .input_mid {
+            height: 40%;
+            width: 100%;
+            background-color: rgba(151, 151, 255, 0);
+            display: flex;
+            justify-content: center;
+        }
+
+        .mid_container {
+            height: 100%;
+            width: 70%;
+            background-color: #F1EDED;
+        }
+
+        .mid_msg_container {
+            text-align: center;
+            height: 100%;
+            display: grid;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .mid_msg_container>p {
+            font-size: 1.9vh;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .mid_msg_point {
+            color: #40DA3D;
+            font-weight: bold;
+        }
+
+        .mid_input_nums {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 70%;
+        }
+
+        .mid_input_nums>input {
+            width: 30%;
+            border: none;
+        }
+
+        .input_bottom {
+            height: 40%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .numpad_area {
+            display: flex;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .numpad {
+            width: 70%;
+            height: 25vh;
+            display: grid;
+            justify-content: center;
+        }
+
+        .numpad_nums {
+            width: 18vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3열 각각 공간 동등하게 */
+            grid-template-rows: repeat(4, 1fr);
+            /* 4행 각각 공간 동등하게 */
+            justify-items: center;
+            gap: 1vh;
+        }
+
+        .numpad_num {
+            width: 5vh;
+            height: 5vh;
+            border-radius: 2cm;
+            background-color: #E6E2E2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .numpad_num>img {
+            width: 3vh;
+            height: 3vh;
+        }
+
+        .numpad_btns {
+            margin-top: 1vh;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/kiosk.png" class="overlay-img" alt="kiosk">
+    </div>
+    <div class="inner_html">
+
+        <div class="header">
+            <div class="header_title">
+                <p>포인트 적립</p>
+            </div>
+            <div class="header_icons">
+
+
+            </div>
+        </div>
+
+        <div class="middle">
+            <div style="width: 80%; height: 70%;">
+                <div
+                    style="height: 50%; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3vh;">
+                    <p><span style="color: green;">회원</span>이신 경우 <br>
+                        => 포인트 적립</p>
+                </div>
+                <hr>
+                <div
+                    style="height: 50%; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3vh;">
+                    <p><span style="color: green;">비회원</span>이신 경우 <br>
+                        => 회원 가입 후 포인트 적립</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer_button save">
+                <p>포인트 적립</p>
+            </div>
+            <div class="footer_button signup">
+                <p>회원가입</p>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="close_div">
+                    <div class="close">
+                        <img src="../img/free-icon-stop-6826393 1.png" alt="close">
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="input_area">
+                        <div class="input_top">
+                            <div class="top_msg">
+                                <p>
+                                    포인트를 적립하시겠습니까?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="input_mid">
+                            <div class="mid_container">
+                                <div class="mid_msg_container">
+                                    <p>적립예정 포인트</p>
+                                    <p class="mid_msg_point">300P</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input_bottom">
+                            <div class="mid_input_nums">
+                                <p>010 -</p>
+                                <input type="tel">
+                                <p>-</p>
+                                <input type="tel">
+                            </div>
+                        </div>
+                        <div class="numpad_area">
+                            <div class="numpad">
+                                <div class="numpad_nums">
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-one-5293828 1.png" alt="1">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-two-5293904 1.png" alt="2">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-three-5293883 1.png" alt="3">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-four-5293803 1.png" alt="4">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-five-5293787 1.png" alt="5">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-six-5293865 1.png" alt="6">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-seven-5293844 1.png" alt="7">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-eight-5293771 1.png" alt="8">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-nine-5293814 1.png" alt="">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-letter-c-4552946 1.png" alt="c">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/free-icon-zero-5293924 1.png" alt="0">
+                                    </div>
+                                    <div class="numpad_num">
+                                        <img src="../img/back-arrow.png" alt="back">
+                                    </div>
+
+                                </div>
+                                <div class="numpad_btns">
+                                    <button>적립 안함</button>
+                                    <button>완료</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <img src="../img/numpad.png" alt="numpad" style="width: 45vh;"> -->
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        $('.save').click(function () {
+            modal.style.display = "block";
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- import jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        /* 스크롤바 전체 컨테이너 */
+        ::-webkit-scrollbar {
+            width: 12px;
+            /* 스크롤바의 너비 설정 */
+            background-color: transparent;
+            /* 배경색을 투명하게 설정 */
+        }
+
+        /* 스크롤바의 실제 이동하는 부분인 핸들 */
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            /* 핸들의 색상과 투명도 설정 */
+            border-radius: 6px;
+            /* 핸들의 모서리 둥글게 */
+            border: 3px solid transparent;
+            /* 투명한 경계선으로 내부 배경 표시 */
+            background-clip: padding-box;
+            /* 내부 경계선 내부에서 배경을 클리핑 */
+        }
+
+        .overlay-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .inner_html {
+            /* get overlay-img width in realtime */
+            width: 52vh;
+            height: 70vh;
+            background-color: rgba(255, 255, 255, 0.992);
+        }
+
+        .header {
+            height: 10%;
+            /* 부모 태그의 높이에 대해 10% 계산 */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_title {
+            font-size: 3vh;
+            margin-left: 5%;
+        }
+
+        .header_title>p {
+            margin-top: 0;
+            margin-bottom: 1%;
+        }
+
+        .header_icons {
+            margin-right: 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_icons>* {
+            font-size: 4vh;
+            /* width: 4vh; */
+            height: 4vh;
+        }
+
+        .header_icons>div {
+            display: flex;
+            align-items: center;
+        }
+
+        .logout {
+            font-size: 2vh;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            margin-left: 1vh;
+        }
+
+        .middle {
+            height: 81%;
+            width: 100%;
+            background-color: #F1EDED;
+            overflow: scroll;
+            text-align: center;
+        }
+
+        .category_btns {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-bottom: 3%;
+            padding-top: 3%;
+            margin-left: 5vh;
+            margin-right: 5vh;
+        }
+
+        .category_btns>button {
+            display: flex;
+            align-items: center;
+            border: transparent;
+            height: 3.5vh;
+            box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        .category_btns>button>p {
+            font-size: 2vh;
+        }
+
+        .table {
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 5vh;
+            margin-right: 5vh;
+
+        }
+
+        .table_header {
+            background-color: #D9D4D4;
+        }
+
+        .table_content {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .table>div>p {
+            font-size: 2vh;
+            font-weight: bold;
+        }
+
+        .item_container {
+            width: 100%;
+        }
+
+        .item {
+            margin: 1vh;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-items: center;
+        }
+
+        .item>div {
+            background-color: rgb(230, 230, 230);
+            width: 9vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item>div>p {
+            margin: 0.5vh;
+        }
+
+        .btns_control {
+            display: flex;
+        }
+
+        .btns_control>img {
+            width: 3vh;
+            height: 3vh;
+            margin: 0.5vh;
+        }
+
+        .overflow {
+            word-break: break-all;
+        }
+
+        .footer {
+            height: calc(75vh * 0.1);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #40DA3D;
+        }
+
+        .footer_button {
+            border: 1px solid black;
+            width: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer_button>p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 3vh;
+            font-weight: 500;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/kiosk.png" class="overlay-img" alt="kiosk">
+    </div>
+    <div class="inner_html">
+
+        <div class="header">
+            <div class="header_title">
+                <p>상품관리 > 제품수량</p>
+            </div>
+            <div class="header_icons">
+                <img src="../img/home.png" alt="home">
+                <div>
+                    <button class="logout">로그아웃</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="category_btns">
+                <button>
+                    <p>햄버거</p>
+                </button>
+                <button>
+                    <p>음료</p>
+                </button>
+                <button>
+                    <p>사이드 메뉴</p>
+                </button>
+                <button>
+                    <p>디저트</p>
+                </button>
+            </div>
+
+            <div class="table table_header">
+                <div>
+                    <p>품목</p>
+                </div>
+                <div>
+                    <p>수량</p>
+                </div>
+                <div>
+                    <p>입력</p>
+                </div>
+                <div>
+                    <p>변경</p>
+                </div>
+            </div>
+
+            <div class="table table_content">
+                <div class="item_container">
+
+                    <div class="item">
+                        <div class="item_name">
+                            <p class="overflow">불고기버거</p>
+                        </div>
+                        <div class="item_stock">
+                            <p class="overflow">120</p>
+                        </div>
+                        <div class="item_input">
+                            <p class="overflow">2</p>
+                        </div>
+                        <div class="item_control">
+                            <div class="btns_control">
+                                <img src="../img/minus.png" alt="minus">
+                                <img src="../img/add.png" alt="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_name">
+                            <p class="overflow">밤양갱</p>
+                        </div>
+                        <div class="item_stock">
+                            <p class="overflow">12</p>
+                        </div>
+                        <div class="item_input">
+                            <p class="overflow">3</p>
+                        </div>
+                        <div class="item_control">
+                            <div class="btns_control">
+                                <img src="../img/minus.png" alt="minus">
+                                <img src="../img/add.png" alt="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_name">
+                            <p class="overflow">딸기케이크</p>
+                        </div>
+                        <div class="item_stock">
+                            <p class="overflow">30</p>
+                        </div>
+                        <div class="item_input">
+                            <p class="overflow">0</p>
+                        </div>
+                        <div class="item_control">
+                            <div class="btns_control">
+                                <img src="../img/minus.png" alt="minus">
+                                <img src="../img/add.png" alt="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_name">
+                            <p class="overflow">갈비버거</p>
+                        </div>
+                        <div class="item_stock">
+                            <p class="overflow">300</p>
+                        </div>
+                        <div class="item_input">
+                            <p class="overflow">0</p>
+                        </div>
+                        <div class="item_control">
+                            <div class="btns_control">
+                                <img src="../img/minus.png" alt="minus">
+                                <img src="../img/add.png" alt="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_name">
+                            <p class="overflow">불맛버거</p>
+                        </div>
+                        <div class="item_stock">
+                            <p class="overflow">150</p>
+                        </div>
+                        <div class="item_input">
+                            <p class="overflow">0</p>
+                        </div>
+                        <div class="item_control">
+                            <div class="btns_control">
+                                <img src="../img/minus.png" alt="minus">
+                                <img src="../img/add.png" alt="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_name">
+                            <p class="overflow">윙치킨</p>
+                        </div>
+                        <div class="item_stock">
+                            <p class="overflow">100</p>
+                        </div>
+                        <div class="item_input">
+                            <p class="overflow">0</p>
+                        </div>
+                        <div class="item_control">
+                            <div class="btns_control">
+                                <img src="../img/minus.png" alt="minus">
+                                <img src="../img/add.png" alt="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_name">
+                            <p class="overflow">새우버거</p>
+                        </div>
+                        <div class="item_stock">
+                            <p class="overflow">300</p>
+                        </div>
+                        <div class="item_input">
+                            <p class="overflow">0</p>
+                        </div>
+                        <div class="item_control">
+                            <div class="btns_control">
+                                <img src="../img/minus.png" alt="minus">
+                                <img src="../img/add.png" alt="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_name">
+                            <p class="overflow">아보카도쥬스</p>
+                        </div>
+                        <div class="item_stock">
+                            <p class="overflow">300</p>
+                        </div>
+                        <div class="item_input">
+                            <p class="overflow">0</p>
+                        </div>
+                        <div class="item_control">
+                            <div class="btns_control">
+                                <img src="../img/minus.png" alt="minus">
+                                <img src="../img/add.png" alt="plus">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer_button save">
+                <p>뒤로 가기</p>
+            </div>
+            <div class="footer_button signup">
+                <p>저장하기</p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+    </script>
+
+</body>
+
+</html>

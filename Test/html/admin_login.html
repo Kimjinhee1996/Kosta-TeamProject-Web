@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- import jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        .overlay-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .inner_html {
+            /* get overlay-img width in realtime */
+            width: 52vh;
+            height: 70vh;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .header {
+            height: 10%;
+            /* 부모 태그의 높이에 대해 10% 계산 */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header_title {
+            font-size: 3vh;
+            margin-left: 5%;
+        }
+
+        .header_title>p {
+            margin-top: 0;
+            margin-bottom: 1%;
+        }
+
+        .header_icons {
+            margin-right: 5%;
+        }
+
+        .header_icons>* {
+            font-size: 4vh;
+            width: 4vh;
+            height: 4vh;
+        }
+
+        .middle {
+            height: 81%;
+            width: 100%;
+            background-color: #F1EDED;
+            display: flex;
+            justify-content: center;
+        }
+
+        .login_form {
+            display: grid;
+            gap: 4vh;
+        }
+
+        .login_txt {
+            text-align: center;
+        }
+
+        .login_txt>p {
+            font-size: 5vh;
+            font-weight: 600;
+            color: #19C216;
+        }
+
+        .input_container {
+            background-color: white;
+        }
+
+        .input_container>p {
+            font-size: 2vh;
+            margin: 1vh;
+        }
+
+        .input_container>input {
+            border: none;
+            font-size: 3vh;
+            margin-left: 1vh;
+            margin-bottom: 1vh;
+            margin-right: 1vh;
+            border-bottom: 1px solid black;
+        }
+
+        .checks_container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .input_check_container {
+            text-align: center;
+            margin: 1vh;
+        }
+
+        .input_check_container>input {
+            width: 2vh;
+            height: 2vh;
+        }
+
+        .input_check_container>span {
+            font-size: 2vh;
+        }
+
+        .login_container {
+            text-align: center;
+            margin-bottom: 1vh;
+        }
+
+        .login_container>button {
+            font-size: 3vh;
+            width: 100%;
+            border: none;
+            color: white;
+            font-weight: bold;
+            background-color: #CDCACA;
+        }
+
+        .bottom_btns_container {
+            text-align: center;
+        }
+
+        .bottom_btns_container>button {
+            font-size: 1.5vh;
+            border: none;
+        }
+
+        .footer {
+            height: calc(75vh * 0.1);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #F1EDED;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/kiosk.png" class="overlay-img" alt="kiosk">
+    </div>
+    <div class="inner_html">
+
+        <div class="header">
+            <div class="header_title">
+                <p>관리자 로그인</p>
+            </div>
+            <div class="header_icons">
+                <img src="../img/home.png" alt="home">
+            </div>
+        </div>
+
+        <div class="middle">
+            <div>
+                <div class="login_txt">
+                    <p>LOGIN</p>
+                </div>
+
+                <div class="login_form">
+                    <div class="input_container">
+                        <p>아이디</p>
+                        <input type="text">
+                    </div>
+
+                    <div class="input_container">
+                        <p>비밀번호</p>
+                        <input type="password">
+                    </div>
+                </div>
+
+
+                <div class="checks_container">
+                    <div class="input_check_container">
+                        <input type="checkbox"><span>아이디 저장</span>
+
+                    </div>
+                    <div class="input_check_container">
+                        <input type="checkbox"><span>로그인 유지</span>
+
+                    </div>
+                </div>
+
+                <div class="login_container">
+                    <button>로그인</button>
+                </div>
+
+                <div class="bottom_btns_container">
+                    <button>아이디 찾기</button>
+                    <span>|</span>
+                    <button>비밀번호 찾기</button>
+                    <span>|</span>
+                    <button>관리자 추가</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="footer">
+            <div class="footer_button save">
+            </div>
+            <div class="footer_button signup">
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
