@@ -17,17 +17,18 @@ body {
   top: 0px;
   left: 0px;
   overflow: hidden;
+  border: 1px solid black;
 }
 
 .v161_4319 {
   width: 297px;
   color: rgba(0, 0, 0, 1);
   position: absolute;
-  top: 66px;
-  left: 40px;
+  top: 76px;
+  left: 85px;
   font-family: Inter;
-  font-weight: Medium;
-  font-size: 40px;
+  font-weight: 500;
+  font-size: 36px;
   opacity: 1;
   text-align: left;
 }
@@ -41,8 +42,8 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 63px;
-  left: 628px;
+  top: 60px;
+  left: 620px;
   overflow: hidden;
 }
 

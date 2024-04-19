@@ -14,6 +14,10 @@
     /* 트랙의 배경을 투명하게 설정 */
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* 스크롤바의 썸 (드래그 가능한 부분) */
 ::-webkit-scrollbar-thumb {
     background: #888;
@@ -41,29 +45,29 @@ body {
 }
 
 .frame {
-    /* 임시 색상 */
-    background-color: #ffffff;
-
-    /* 전체 뷰포트 너비 */
-    width: calc(100vh * (512 / 683));
-    height: 100vh;
-    max-width: 1024px;
-    max-height: 1366px;
-
-    border: 0.2vh solid black;
+    width: 834px !important;
+    height: 1194px !important;
+    background: rgba(255, 255, 255, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    border: 1px solid black;
+}
 }
 
 .footer_main {
     background-color: #F1EDED;
     width: 100%;
-    height: 5%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
 .background_main {
-    height: 95%;
+    height: 90%;
     background: linear-gradient(to right, #E8F460 50%, #19C216 50%);
 }
 
@@ -80,14 +84,13 @@ body {
 }
 
 .item_img {
-    width: 23vh;
+    width: 300px;
 }
 
 .btn_category {
     width: 16vh;
     height: 6vh;
-    font-size: 2.4vh !important;
-
+    font-size: 29px !important;
 }
 
 .header {
@@ -95,19 +98,24 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10%;
-    padding-left: 5vh;
+    height: 13%;
+    padding-left: 1vh;
     padding-right: 5vh;
 }
 
 .header_title {
-    font-size: 4vh;
-    margin-top: 1.5vh;
+    font-size: 36px;
+    font-weight: 500;
+    top: 76px !important;
+    left: 10px;
+    margin-top: 4.0vh;
+
 }
 
 .cart {
-    width: 6vh;
-    height: 6vh;
+    width: 62px;
+    height: 60px;
+    top: 60px;
     display: block;
 }
 
@@ -128,9 +136,9 @@ body {
     /* 정확히 중앙에 오도록 조정 */
     transform: translate(-50%, -50%);
     /* 텍스트 색상 설정 */
-    color: white;
+    color: red;
     /* 텍스트 크기 설정 */
-    font-size: 3vh;
+    font-size: 40px;
     /* 텍스트 중앙 정렬 */
     text-align: center;
 }
@@ -164,20 +172,23 @@ body {
 }
 
 .item_title {
-    font-size: 4vh;
+    font-size: 35px;
+    font-weight: 600;
 }
 
 .item_sub {
-    font-size: 2vh;
+    font-size: 25px;
 }
 
 .item_price {
-    font-size: 2vh;
+    font-size: 30px;
+    font-weight: 600;
+    color: green;
 }
 
 .home_container img {
-    width: 5vh;
-    height: 5vh;
+    width: 62px;
+    height: 60px;
 }
 
 /*.header_right_items {

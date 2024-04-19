@@ -13,9 +13,10 @@
 <body>
     <div class="v161_4318"><span class="v161_4319">관리자 메뉴</span>
 
-        <div class="v161_4320"></div>
+        <div class="v161_4320" style="cursor: pointer;"></div>
         <div class="v161_4321"></div>
-        <div class="v161_4338"></div><span class="v161_4339">로그아웃</span>
+        <div class="v161_4338" style="cursor: pointer;"></div><span class="v161_4339"
+            style="cursor: pointer;">로그아웃</span>
         <div class="v161_4399"></div>
         <div class="v182_5609">
             <div class="v161_4371"></div><span class="v161_4394">상품 관리</span>
@@ -35,6 +36,17 @@
         </div>
 
     </div>
+    <script>
+        $(".v161_4338").click(function () {
+            alert('관리자 창에서 로그아웃 합니다.');
+        });
+        $(".v161_4339").click(function () {
+            alert('관리자 창에서 로그아웃 합니다.');
+        });
+        $(".v161_4320").click(function () {
+            alert('뒷 페이지로 이동합니다.');
+        });
+    </script>
 </body>
 
 </html>

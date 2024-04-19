@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="v66_40">
+        <div class="v161_5041" style="cursor: pointer;"></div><span class="v161_5044">회원 관리>회원 삭제</span>
+        <div class="v161_5045" style="cursor: pointer;"></div>
+        <div class="v161_5046" style="cursor: pointer;"></div><span class="v161_5047"
+            style="cursor: pointer;">로그아웃</span>
+        <div class="v165_5048"></div>
+        <div class="v192_5626">
+            <div class="v165_5049"></div>
+            <div class="v165_5050" style="cursor: pointer;" onclick="alert('전화번호를 검색합니다')"></div><span
+                class="v165_5051"><input type="tel" style="height: 50px; font-size: 30px; border:none"
+                    placeholder="번호를 입력하세요"></span>
+        </div>
+        <div class="v192_5627">
+            <div class="v165_5053"></div>
+            <div class="v165_5054"></div><span class="v165_5055">김정보 </span><span class="v165_5056">보유
+                포인트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="color: green; font-weight: bold;"> 460P</span></span><span class="v165_5058">단골</span>
+        </div>
+        <div class="v192_5628">
+            <div class="v165_5052"></div><span class="v165_5090">보유하고 있는<span style="color: red;"> 포인트</span>까지 모두 <span
+                    style="color: red;">삭제</span>
+                됩니다. 삭제하시겠습니까?</span>
+        </div>
+        <div class="v165_5110"></div>
+        <div class="v165_5111" style="cursor: pointer;"></div>
+        <div class="v165_5112" style="cursor: pointer;"></div>>
+    </div><span class="v165_5113" style="cursor: pointer;">네</span><span class="v165_5114"
+        style="cursor: pointer;">아니오</span>
+    </div>
+    <script>
+        $(".v161_5046").click(function () {
+            alert('관리자 창에서 로그아웃 합니다.');
+        });
+        $(".v161_5047").click(function () {
+            alert('관리자 창에서 로그아웃 합니다.');
+        });
+        $(".v161_5045").click(function () {
+            alert('뒷 페이지로 이동합니다.');
+        });
+        $(".v161_5041").click(function () {
+            alert('메인 화면으로 이동합니다');
+        });
+        $(".v165_5111").click(function () {
+            var result = confirm('회원 정보를 정말 삭제하시겠습니까?');
+
+            if (result) {
+                alert('삭제하였습니다.');
+            } else {
+                alert('취소하였습니다.')
+            }
+        });
+        $(".v165_5113").click(function () {
+            var result = confirm('회원 정보를 정말 삭제하시겠습니까?');
+
+            if (result) {
+                alert('삭제하였습니다.');
+            } else {
+                alert('취소하였습니다.')
+            }
+        });
+        $(".v165_5112").click(function () {
+            alert('취소하였습니다.');
+        });
+        $(".v165_5114").click(function () {
+            alert('취소하였습니다.');
+        });
+    </script>
+</body>
+
+</html>
